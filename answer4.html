@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>پاسخ مرحله ۴ | The Zero Secret</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f1f8e8;
+      color: #173B2A;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 2;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 40px 22px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .number {
+      font-size: 14px;
+      color: #315C43;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 8px 0;
+      color: #123524;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      color: #315C43;
+      font-size: 15px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #c8dcbc;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 10px 30px rgba(23, 59, 42, 0.12);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #123524;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 18px 0;
+      color: #173B2A;
+    }
+
+    strong {
+      color: #0E2B1D;
+    }
+
+    .password-box {
+      margin-top: 25px;
+      padding: 20px;
+      background: #f1f8e8;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 13px;
+      margin-top: 12px;
+      border: 1px solid #9fbd9f;
+      border-radius: 8px;
+      font-size: 18px;
+      text-align: center;
+      color: #173B2A;
+      background: #ffffff;
+    }
+
+    button {
+      margin-top: 14px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      background: #173B2A;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: #8B3A3A;
+      margin-top: 10px;
+      display: none;
+      font-size: 14px;
+    }
+
+    #stage2 {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .success {
+      padding: 15px 18px;
+      margin-bottom: 25px;
+      background: #e4f0d8;
+      border-radius: 10px;
+      color: #123524;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #315C43;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <div class="number">THE ZERO SECRET</div>
+      <h1>پاسخ مرحله ۴</h1>
+    </div>
+
+    <div class="card">
+
+      <!-- بخش وارد کردن رمز -->
+
+      <div id="passwordSection">
+
+        <h2>۱. رمز مرحله ۴ را وارد کن</h2>
+
+        <p>
+          (رمز به کلمه می‌باشد.)
+        </p>
+
+        <div class="password-box">
+
+          <label for="password">رمز:</label>
+
+          <input
+            type="text"
+            id="password"
+            placeholder="رمز را وارد کن"
+            autocomplete="off"
+          >
+
+          <br>
+
+          <button onclick="checkPassword()">
+            ورود
+          </button>
+
+          <div class="error" id="error">
+            رمز اشتباه است. دوباره تلاش کن.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- متن مرحله بعد از رمز صحیح -->
+
+      <div id="stage2">
+
+        <div class="success">
+          تبریک می‌گویم!
+        </div>
+
+        <p>
+          شما توانستید این مرحله‌ سخت را پشت سر بگذارید.
+          دیگر خبری از ویروس نیست و سیستم درحال بازگشت به حالت عادی می‌باشد.
+        </p>
+
+        <p>
+          شاید برایتان جالب باشد که بدانید، اسم رمزی این ویروس
+          <strong>Olympic Games</strong>
+          یا بازی‌های المپیک است.
+        </p>
+
+        <p>
+          با کمک شما اسم ویروس را فهمیدیم، راه نفوذش به سایت را کشف کردیم،
+          علت سکوت سیستم‌ها را متوجه شدیم و همه چیز را ایزوله کردیم
+          تا خطری نداشته باشیم!
+        </p>
+
+        <p>
+          حالا دیگر می‌توانیم با خیال راحت‌ کارها را پیش ببریم.
+        </p>
+
+        <p>
+          اما بازی هنوز تمام نشده!
+          مواظب باشید، دشمن همیشه در کمین است.
+        </p>
+
+      </div>
+
+    </div>
+
+    <footer>
+      THE ZERO SECRET
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function checkPassword() {
+
+      const password =
+        document.getElementById("password").value.trim();
+
+      if (password === "olympic") {
+
+        document.getElementById("passwordSection").style.display = "none";
+
+        document.getElementById("stage2").style.display = "block";
+
+      } else {
+
+        document.getElementById("error").style.display = "block";
+
+      }
+    }
+
+
+    document.getElementById("password").addEventListener("keypress", function(event) {
+
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
